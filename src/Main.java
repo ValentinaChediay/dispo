@@ -39,18 +39,20 @@ public class Main {
         return s;
     }
 
-    // было 1 HB G HIGH & YELLOW 50 25 0,35 стало G HIGH  YELLOW
-    // было CHERRY OH! 50 25 ( ) 2 стало CHERRY OH
-    // было 3 hb mix 40 50 60  gardens roses  WILD CITY стало MIX GARDENS ROSES WILD CITY
-    // CRASPEDIA, ROSE SPRAY, ALSTROEMERIA, DIANTHUS - это что?
+    // Вопросы
+    // 1. что такое G: было 1 HB G HIGH & YELLOW 50 25 0,35 стало G HIGH  YELLOW
+    // 2. как называется сорт, надо оставлять !: было CHERRY OH! 50 25 ( ) 2 стало CHERRY OH
+    // 3. gardens roses  WILD CITY - это два разных сорта? было 3 hb mix 40 50 60  gardens roses  WILD CITY стало GARDENS ROSES WILD CITY
+    // 4. CRASPEDIA, DIANTHUS - это группы?, ROSE SPRAY - так написали вместо группы SPRAY ROSA?, ALSTROEMERIA - так написали вместо группы ALSTROMERIA?
 
-    // было MX COLOR 1HB 40  /1HB 50 стало MX COLOR
-    // опечатка вместо PIUMA DARK BLUE -> PIUM DRAK BLUE
-    // было boulevar+hot explorer 1hbx50/60/70 стало BOULEVAR \n HOT EXPLORER  HBX
-    // забыли слеш SHIMMER FULLMONTY
-    // вместо high они написали h
-    // вместо With -> WHITE OHARA WHIT FREEDOM
-    // опечатка вместо hb, hn => осталось HN GOTCHA
+    // Опечатки
+    // 1. имели ввиду MIX, написали MX? было MX COLOR 1HB 40  /1HB 50 стало MX COLOR
+    // 2. опечатка вместо PIUMA DARK BLUE -> PIUM DRAK BLUE
+    // 3. было boulevar+hot explorer 1hbx50/60/70 записала как два отдельных сорта: BOULEVAR, HOT EXPLORER HBX (но оставлось HBX, потому что слитно написали)
+    // 4. забыли слеш SHIMMER FULLMONTY
+    // 5. вместо high они написали h
+    // 6. вместо With написали WHIT -> WHITE OHARA WHIT FREEDOM
+    // 7. вместо hb, hn => осталось HN GOTCHA
 
     private static boolean conditionForbiddenSymbols(String s) {
         // запрещенные символы
