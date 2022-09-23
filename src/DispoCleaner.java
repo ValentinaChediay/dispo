@@ -2,11 +2,11 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class DispoCleaner {
-  // запрещенные символы (размерности)
+  // Р·Р°РїСЂРµС‰РµРЅРЅС‹Рµ СЃРёРјРІРѕР»С‹ (СЂР°Р·РјРµСЂРЅРѕСЃС‚Рё)
   String[] forbiddenSymbols = {"HB", "QB", "EB", "SELECT", "FANCY", "CM", "CV", "BUNCHES", "X", "ST", "MIX"};
-  // группы
+  // РіСЂСѓРїРїС‹
   String[] groups = {"ROSA ESTANDAR", "ROSA GARDEN", "ROSA TINTURADA", "CLAVEL", "ALSTROMERIA", "STOCK", "MINICLAVEL", "SPRAY ROSA", "OTROS", "LIMONIUM", "OZOTHAMNUS"};
-  // опечатки
+  // РѕРїРµС‡Р°С‚РєРё
   Map<String, String> mapOfTypos = new HashMap<String, String>() {{
     put("hn", "hb");
     put("MX", "MIX");
@@ -36,13 +36,13 @@ public class DispoCleaner {
   }
 
   private String clearLine(String line) {
-    // удаляется всё кроме букв и апострофа, удаляются лишние пробелы
+    // СѓРґР°Р»СЏРµС‚СЃСЏ РІСЃС‘ РєСЂРѕРјРµ Р±СѓРєРІ Рё Р°РїРѕСЃС‚СЂРѕС„Р°, СѓРґР°Р»СЏСЋС‚СЃСЏ Р»РёС€РЅРёРµ РїСЂРѕР±РµР»С‹
     line = line.replaceAll("[^A-Z-'-]|-", " ").trim().replaceAll("\\s+", " ");
-    // исправляются опечатки
+    // РёСЃРїСЂР°РІР»СЏСЋС‚СЃСЏ РѕРїРµС‡Р°С‚РєРё
     line = correctionOfTypos(line);
-    // удаляю запрещенные символы
+    // СѓРґР°Р»СЏСЋ Р·Р°РїСЂРµС‰РµРЅРЅС‹Рµ СЃРёРјРІРѕР»С‹
     line = Arrays.stream(line.split(" ")).filter(this::checkForbiddenSymbols).collect(Collectors.joining(" "));
-    // удаляются группы
+    // СѓРґР°Р»СЏСЋС‚СЃСЏ РіСЂСѓРїРїС‹
     line = deleteGroups(line);
     return line;
   }
